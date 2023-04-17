@@ -41,8 +41,15 @@ def scrapeAndStore():
       urls = [url["href"] for url in soup.find_all]
       publication_dates = [date.text for date in soup.find_all('span', class_='date')]
       citations = [citation.text for citation in soup.find_all('span', class_='citation')]
-      print(type(headlines))
-    
+      
+      connection = create_connection()
+      create_news_table(connection)
+      today = datetime.date.today()
+
+if __name__ == '__main__':
+      scrapeAndStore()
+
+connection.close()
 
 
     
