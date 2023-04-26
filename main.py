@@ -3,7 +3,7 @@ import mysql.connector
 from bs4 import BeautifulSoup
 import datetime
 
-# establish mySQL connection 
+# new table created, must revisit
 def conntectMySQl(): 
         connection = mysql.connector.connect(
             host='localhost',
